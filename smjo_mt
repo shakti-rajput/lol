@@ -1,0 +1,12 @@
+$(document).ready(function() {
+   var prev_status = null;
+    $("body").on('DOMSubtreeModified', function() {
+        var current_status = $('.O90ur').html();
+        if (prev_status != current_status) {
+			var status = (current_status == null) ? "offline" : current_status;
+            var fullDate = new Date();
+        	console.log(status+' , '+fullDate);
+        	prev_status = current_status;
+        }
+    }); 
+});
